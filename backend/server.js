@@ -2,7 +2,7 @@ import express from 'express';
 
 const app = express();
 
-app.get("/products", (req, res) => {
+app.get("/home", (req, res) => {
     res.send("Server is ready123");
 });
 
