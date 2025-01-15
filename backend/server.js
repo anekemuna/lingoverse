@@ -9,7 +9,6 @@ const app = express();
 app.get("/home", (req, res) => {
     res.send("Server is ready123");
 });
-console.log(process.env.MONGO_URI);
 
 app.listen(8888, () =>{
     connectDB();
