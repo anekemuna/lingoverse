@@ -8,9 +8,13 @@ export const registerUser = async (req,res) => {
     }
     const newUser = new User(user);
     try{
-       
+        await newUser.save();
+        res.status(201).json({success: true, data: newUser});
+    } catch(error){
+        console.error("Error in creating user:", error.message);
+        res.status(500).json({success: false, message: "Server Error"});
     }
-    catch(errror){
-
-    }
-}
+};
+export const loginUser = async (req, res) => {};
+export const updateUser = async (req, res) => {};
+export const deleteUser = async (req, res) => {};
