@@ -30,7 +30,6 @@ export const loginUser = async (req, res) => {
     try{
         //method to verify username email and password from database
         const userIsValid = await verifyUser(requestObj.userName, requestObj.password)
-        console.log(userIsValid)
         //check if matches
         if(userIsValid){
             return res.status(200).json({succes: true, message: 'Login successful'})
