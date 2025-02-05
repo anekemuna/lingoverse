@@ -1,21 +1,17 @@
 //import React from "react";
 import "./LandingPage.css";
+import pic1 from "../assets/landing_pic1.jpeg";
+import pic2 from "../assets/landing_pic2.jpeg";
+
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
       <div className="background-section"></div>
-      <img
-        className="image1"
-        src="https://via.placeholder.com/481x486"
-        alt="Placeholder"
-      />
+      <img className="image1" src={pic1} alt="pic1" />
       <div className="footer"></div>
-      <img
-        className="image2"
-        src="https://via.placeholder.com/513x451"
-        alt="Placeholder"
-      />
+      <img className="image2" src={pic2} alt="pic2" />
+
       <div className="header"></div>
 
       <div className="content-section">

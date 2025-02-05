@@ -14,9 +14,9 @@ function App() {
       {/* <button>Hello</button> */}
       <Box minH={("100vh")}>
       < Navbar />
-      <Routes>
-        <Route path='/' element={<LandingPage/>}/>
-      </Routes>
+        <Routes>
+          <Route path='/' element={<LandingPage/>}/>
+        </Routes>
       </Box>
     </>
   );
