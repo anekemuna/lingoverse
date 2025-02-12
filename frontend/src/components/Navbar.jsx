@@ -32,9 +32,11 @@ const Navbar = () => {
                         <div className="nav-item">Locations</div>
                         <div className="nav-item">Contact</div>
                     </div>
+                    <Link to="/Login.jsx">
                     <div className="signup-button">
                         <div>Sign Up</div>
                     </div>
+                    </Link>
                 </div>
 
                 <HStack spacing={2} alignItems="center">
