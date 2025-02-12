@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Container, Flex, HStack, Text, useColorMode } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { PlusSquareIcon } from "@chakra-ui/icons";
 import { IoMoon } from "react-icons/io5";
 import { LuSun } from "react-icons/lu";
 import "./Navbar.css";
+import Login from "./Login.jsx";
 
 const Navbar = () => {
     const { colorMode, toggleColorMode } = useColorMode();
+    const [isPopupOpen, setPopupOpen] = useState(false);
 
     return (
         <Container maxW="1140px" px={4}>
@@ -32,11 +34,11 @@ const Navbar = () => {
                         <div className="nav-item">Locations</div>
                         <div className="nav-item">Contact</div>
                     </div>
-                    <Link to="/Login.jsx">
-                    <div className="signup-button">
-                        <div>Sign Up</div>
+                    <div className="signup-button" >
+                        <div onClick={() => setPopupOpen(true)}>Sign Up</div>
+                        <Login isOpen={isPopupOpen} onClose={() => setPopupOpen(false)} />
                     </div>
-                    </Link>
+                    
                 </div>
 
                 <HStack spacing={2} alignItems="center">

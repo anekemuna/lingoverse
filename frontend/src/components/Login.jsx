@@ -1,5 +1,5 @@
 import React from "react";
-import pic2 from "../assets/landing_pic2.jpeg";
+import background_pic from "../assets/login_background.jpg";
 
 const Login = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
@@ -21,89 +21,108 @@ const Login = ({ isOpen, onClose }) => {
     >
       <div
         style={{
-          width: 450,
-          height: 550,
-          background: "white",
-          position: "relative",
-          borderRadius: 10,
-          padding: 20,
+          width: 600,
+          height: 400,
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          backgroundImage: `url(${pic2})`,
-          backgroundSize: "cover",
+          borderRadius: 10,
+          overflow: "hidden",
+          boxShadow: "0px 4px 10px rgba(0,0,0,0.2)",
         }}
       >
-        {/* Close Button */}
-        <button
-          onClick={onClose}
+        {/* Left Half (Grey Background with Login Form) */}
+        <div
           style={{
-            position: "absolute",
-            top: 10,
-            right: 10,
-            background: "red",
-            color: "white",
-            border: "none",
-            padding: "5px 10px",
-            borderRadius: 5,
-            cursor: "pointer",
+            width: "50%",
+            background: "#ECE9E9",
+            padding: 20,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          X
-        </button>
+          <h2 style={{ color: "#003B8C", fontSize: 28, marginBottom: 20 }}>
+            Welcome Back!
+          </h2>
 
-        <h2 style={{ color: "#003B8C", fontSize: 32, marginBottom: 20 }}>
-          Welcome Back!
-        </h2>
+          {/* Username Input */}
+          <div style={{ width: "100%", marginBottom: 15 }}>
+            <label style={{ color: "#1E1E1E", fontSize: 14 }}>Username</label>
+            <input
+              type="text"
+              placeholder="Enter your username"
+              style={{
+                width: "100%",
+                padding: 10,
+                borderRadius: 8,
+                border: "1px solid #D9D9D9",
+                marginTop: 5,
+              }}
+            />
+          </div>
 
-        {/* Username Input */}
-        <div style={{ width: "80%", marginBottom: 15 }}>
-          <label style={{ color: "#1E1E1E", fontSize: 16 }}>Username</label>
-          <input
-            type="text"
-            placeholder="Enter your username"
+          {/* Password Input */}
+          <div style={{ width: "100%", marginBottom: 15 }}>
+            <label style={{ color: "#1E1E1E", fontSize: 14 }}>Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              style={{
+                width: "100%",
+                padding: 10,
+                borderRadius: 8,
+                border: "1px solid #D9D9D9",
+                marginTop: 5,
+              }}
+            />
+          </div>
+
+          {/* Sign In Button */}
+          <button
             style={{
               width: "100%",
-              padding: 10,
+              padding: 12,
+              background: "#003B8C",
+              color: "white",
+              border: "none",
               borderRadius: 8,
-              border: "1px solid #D9D9D9",
-              marginTop: 5,
+              fontSize: 16,
+              cursor: "pointer",
+              marginTop: 10,
             }}
-          />
+          >
+            Sign In
+          </button>
         </div>
 
-        {/* Password Input */}
-        <div style={{ width: "80%", marginBottom: 15 }}>
-          <label style={{ color: "#1E1E1E", fontSize: 16 }}>Password</label>
-          <input
-            type="password"
-            placeholder="Enter your password"
-            style={{
-              width: "100%",
-              padding: 10,
-              borderRadius: 8,
-              border: "1px solid #D9D9D9",
-              marginTop: 5,
-            }}
-          />
-        </div>
-
-        {/* Sign In Button */}
-        <button
+        {/* Right Half (Image Background) */}
+        <div
           style={{
-            width: "80%",
-            padding: 12,
-            background: "#003B8C",
-            color: "white",
-            border: "none",
-            borderRadius: 8,
-            fontSize: 16,
-            cursor: "pointer",
-            marginTop: 10,
+            width: "50%",
+            backgroundImage: `url(${background_pic})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            position: "relative",
           }}
         >
-          Sign In
-        </button>
+          {/* Close Button (Top Right) */}
+          <button
+            onClick={onClose}
+            style={{
+              position: "absolute",
+              top: 10,
+              right: 10,
+              background: "red",
+              color: "white",
+              border: "none",
+              padding: "5px 10px",
+              borderRadius: 5,
+              cursor: "pointer",
+            }}
+          >
+            X
+          </button>
+        </div>
       </div>
     </div>
   );
