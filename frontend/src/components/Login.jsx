@@ -1,125 +1,58 @@
-import React from "react";
-import background_pic from "../assets/login_background.jpg";
+import React, { useState } from "react";
+import "./Login.css"; // Importing the CSS file
+import login_pic from "../assets/login_background.jpg";
 
 const Login = ({ isOpen, onClose }) => {
+  const [isLogin, setIsLogin] = useState(true); // State to toggle between login & register
+
   if (!isOpen) return null;
 
   return (
-    <div
-      style={{
-        width: "100vw",
-        height: "100vh",
-        position: "fixed",
-        top: 0,
-        left: 0,
-        background: "rgba(0, 0, 0, 0.5)", // Dimmed background
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        zIndex: 1000,
-      }}
-    >
-      <div
-        style={{
-          width: 600,
-          height: 400,
-          display: "flex",
-          borderRadius: 10,
-          overflow: "hidden",
-          boxShadow: "0px 4px 10px rgba(0,0,0,0.2)",
-        }}
-      >
-        {/* Left Half (Grey Background with Login Form) */}
-        <div
-          style={{
-            width: "50%",
-            background: "#ECE9E9",
-            padding: 20,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <h2 style={{ color: "#003B8C", fontSize: 28, marginBottom: 20 }}>
-            Welcome Back!
-          </h2>
+    <div className="login-overlay">
+      <div className="login-container">
+        {/* Left Half (Form Section) */}
+        <div className="login-form-section">
+          <h2>{isLogin ? "Welcome Back!" : "Create an Account"}</h2>
 
           {/* Username Input */}
-          <div style={{ width: "100%", marginBottom: 15 }}>
-            <label style={{ color: "#1E1E1E", fontSize: 14 }}>Username</label>
-            <input
-              type="text"
-              placeholder="Enter your username"
-              style={{
-                width: "100%",
-                padding: 10,
-                borderRadius: 8,
-                border: "1px solid #D9D9D9",
-                marginTop: 5,
-              }}
-            />
+          <div className="input-group">
+            <label>Username</label>
+            <input type="text" placeholder="Enter your username" />
           </div>
+
+          {/* Email Input (Only for Registration) */}
+          {!isLogin && (
+            <div className="input-group">
+              <label>Email</label>
+              <input type="email" placeholder="Enter your email" />
+            </div>
+          )}
 
           {/* Password Input */}
-          <div style={{ width: "100%", marginBottom: 15 }}>
-            <label style={{ color: "#1E1E1E", fontSize: 14 }}>Password</label>
-            <input
-              type="password"
-              placeholder="Enter your password"
-              style={{
-                width: "100%",
-                padding: 10,
-                borderRadius: 8,
-                border: "1px solid #D9D9D9",
-                marginTop: 5,
-              }}
-            />
+          <div className="input-group">
+            <label>Password</label>
+            <input type="password" placeholder="Enter your password" />
           </div>
 
-          {/* Sign In Button */}
-          <button
-            style={{
-              width: "100%",
-              padding: 12,
-              background: "#003B8C",
-              color: "white",
-              border: "none",
-              borderRadius: 8,
-              fontSize: 16,
-              cursor: "pointer",
-              marginTop: 10,
-            }}
-          >
-            Sign In
+          {/* Sign In / Register Button */}
+          <button className="login-btn">
+            {isLogin ? "Sign In" : "Register"}
           </button>
+
+          {/* Toggle Between Login & Register */}
+          <p className="toggle-link" onClick={() => setIsLogin(!isLogin)}>
+            {isLogin
+              ? "Not registered yet? Create an account"
+              : "Already registered? Sign in"}
+          </p>
         </div>
 
         {/* Right Half (Image Background) */}
         <div
-          style={{
-            width: "50%",
-            backgroundImage: `url(${background_pic})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            position: "relative",
-          }}
+          className="login-image-section"
+          style={{ backgroundImage: `url(${login_pic})` }}
         >
-          {/* Close Button (Top Right) */}
-          <button
-            onClick={onClose}
-            style={{
-              position: "absolute",
-              top: 10,
-              right: 10,
-              background: "red",
-              color: "white",
-              border: "none",
-              padding: "5px 10px",
-              borderRadius: 5,
-              cursor: "pointer",
-            }}
-          >
+          <button className="close-btn" onClick={onClose}>
             X
           </button>
         </div>

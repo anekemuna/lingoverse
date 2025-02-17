@@ -1,0 +1,102 @@
+/* Overlay Background */
+.login-overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Main Popup Container */
+.login-container {
+  width: 600px;
+  height: 500px;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Left Section (Form) */
+.login-form-section {
+  width: 50%;
+  background: #ece9e9;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form-section h2 {
+  color: #003b8c;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  color: #1e1e1e;
+  font-size: 14px;
+}
+
+.input-group input {
+  color: rgb(74, 74, 74);
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  margin-top: 5px;
+}
+
+/* Submit Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: #003b8c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Toggle Link */
+.toggle-link {
+  margin-top: 15px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #003b8c;
+  text-decoration: underline;
+}
+
+/* Right Section (Image) */
+.login-image-section {
+  width: 50%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
