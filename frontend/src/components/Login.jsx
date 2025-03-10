@@ -1,23 +1,25 @@
 import React, { useState } from "react";
 import "./Login.css"; // Importing the CSS file
 import login_pic from "../assets/login_background.jpg";
-import { ConnectionStates } from "mongoose";
+import { useUserStore } from "../stores/user.store";
+
 
 const Login = ({ isOpen, onClose }) => {
   const [isLogin, setIsLogin] = useState(true); // State to toggle between login & register
 
   const [formData, setFormData] = useState({
-    username: "",
+    userName: "",
     email: "",
     password: "",
   });
 
   const [errors, setErrors] = useState({});
+  const { login, loading } = useUserStore();
 
   const formValidation = () => {
     let errors = {};
 
-    if (!formData.username.trim()){
+    if (!formData.userName.trim()){
       errors.username = "Username is a required field"
     }
     if (formData.password.length < 8){
@@ -39,6 +41,8 @@ const Login = ({ isOpen, onClose }) => {
     if(formValidation()){
       alert(isLogin ? "Logging in..." : "Registering...");
     }
+    console.log(formData);
+    login(formData.userName, formData.password);
 
   };
 
@@ -55,7 +59,7 @@ const Login = ({ isOpen, onClose }) => {
           {/* Username Input */}
           <div className="input-group">
             <label>Username</label>
-            <input type="text" name="username" value= {formData.username} onChange={handleChange} placeholder="Enter your username" />
+            <input type="text" name="userName" value= {formData.userName} onChange={handleChange} placeholder="Enter your username" />
             {errors.username && <p className="error-text">{errors.username}</p>}
           </div>
 

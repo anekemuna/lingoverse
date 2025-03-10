@@ -32,7 +32,7 @@ export const loginUser = async (req, res) => {
         const userIsValid = await verifyUser(requestObj.userName, requestObj.password)
         //check if matches
         if(userIsValid){
-            return res.status(200).json({succes: true, message: 'Login successful'})
+            return res.status(200).json({success: true, message: 'Login successful'})
         }
         return res.status(401).json({success: false, message: 'Invalid Login Credentials'})
     }
