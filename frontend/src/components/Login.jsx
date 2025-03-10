@@ -38,6 +38,7 @@ const Login = ({ isOpen, onClose }) => {
     e.preventDefault();
     if(formValidation()){
       alert(isLogin ? "Logging in..." : "Registering...");
+      
     }
 
   };
