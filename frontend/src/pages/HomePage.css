@@ -1,0 +1,155 @@
+.home-container {
+    width: 1280px;
+    height: 832px;
+    position: relative;
+    background: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .activity-panel {
+    width: 346px;
+    height: 752px;
+    position: absolute;
+    left: 284px;
+    top: 40px;
+    background: #f5f7ff;
+    border-radius: 40px;
+    padding: 30px;
+  }
+  
+  .activity-title {
+    color: #292929;
+    font-size: 27.11px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+  }
+  
+  .activity-subtitle {
+    color: #003b8c;
+    font-size: 18px;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    margin-top: 10px;
+  }
+  
+  .activity-card {
+    width: 286px;
+    height: 160px;
+    border-radius: 18px;
+    padding: 20px;
+    margin-top: 20px;
+    color: white;
+  }
+  
+  .blue {
+    background: #003050;
+  }
+  
+  .yellow {
+    background: #f8db39;
+  }
+  
+  .red {
+    background: #ec6f70;
+  }
+  
+  .activity-header {
+    font-size: 10.7px;
+    font-weight: 500;
+  }
+  
+  .activity-name {
+    font-size: 18.13px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  
+  .activity-text {
+    font-size: 8.92px;
+    font-weight: 400;
+    margin-top: 5px;
+  }
+  
+  .user-info {
+    position: absolute;
+    top: 67px;
+    right: 50px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-avatar {
+    width: 57px;
+    height: 58px;
+    border-radius: 16px;
+    background: #f5f7ff;
+  }
+  
+  .user-details {
+    margin-left: 10px;
+  }
+  
+  .user-name {
+    color: #003050;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .user-role {
+    color: #00d1ff;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .menu {
+    position: absolute;
+    left: 50px;
+    top: 200px;
+  }
+  
+  .menu-item {
+    font-size: 20.33px;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    color: #ababab;
+    margin-bottom: 20px;
+  }
+  
+  .menu-item.active {
+    color: #003b8c;
+    font-weight: 600;
+  }
+  
+  .goals-panel {
+    width: 590px;
+    height: 623px;
+    position: absolute;
+    left: 650px;
+    top: 169px;
+    background: #edfbff;
+    border-radius: 40px;
+    padding: 20px;
+  }
+  
+  .goals-title {
+    color: #292929;
+    font-size: 27.11px;
+    font-weight: 600;
+  }
+  
+  .goals-subtitle {
+    color: #003b8c;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 10px;
+  }
+  
+  .goal-day {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ababab;
+    margin-top: 20px;
+  }
+  

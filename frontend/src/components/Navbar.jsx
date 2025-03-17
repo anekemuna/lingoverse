@@ -29,7 +29,11 @@ const Navbar = () => {
 
                 <div className="nav-links">
                     <div className="nav-items">
-                        <div className="nav-item">Home</div>
+                    <Link to="/homePage">
+                        <div 
+                            className="nav-item">Home
+                        </div>
+                    </Link>
                         <div className="nav-item">About</div>
                         <div className="nav-item">Locations</div>
                         <div className="nav-item">Contact</div>
